@@ -194,6 +194,29 @@ void shellSortByGPA(T *arr, int size)
     }
 }
 
+template <typename T>
+void MergeSort(T *arr, int size)
+{
+
+}
+
+template <typename T>
+void MergeSortByGPA(T *arr, int size)
+{
+
+}
+template <typename T>
+void QuickSort(T *arr, int size)
+{
+
+}
+
+template <typename T>
+void QuickSortByGPA(T *arr, int size)
+{
+
+}
+
 int main()
 {
 //     fs::path currentPath = fs::current_path();
