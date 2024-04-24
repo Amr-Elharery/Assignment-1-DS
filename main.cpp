@@ -196,7 +196,7 @@ void shellSortByGPA(T *arr, int size)
 
 int main()
 {
-    // fs::path currentPath = fs::current_path();
+//     fs::path currentPath = fs::current_path();
 
     // string FilePath;
 
@@ -207,6 +207,7 @@ int main()
 
     try
     {
+//        Note:- Absolute paths
         inputFile.open(R"(E:\Amr\EDUCATION\FCAI\Second-Year\Second-semester\Datastructure\Assignments\Assignment-1\students.txt)");
         sortByName.open(R"(E:\Amr\EDUCATION\FCAI\Second-Year\Second-semester\Datastructure\Assignments\Assignment-1\sortByName.txt)");
         sortByGPA.open(R"(E:\Amr\EDUCATION\FCAI\Second-Year\Second-semester\Datastructure\Assignments\Assignment-1\sortByGPA.txt)");
