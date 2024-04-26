@@ -1,3 +1,3 @@
-E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/Datastructure/Assignments/Assignment-1/cmake-build-debug/CMakeFiles/Student.dir
-E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/Datastructure/Assignments/Assignment-1/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/Datastructure/Assignments/Assignment-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/DataStructures/Assignments/Assignment-1/cmake-build-debug/CMakeFiles/Student.dir
+E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/DataStructures/Assignments/Assignment-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/DataStructures/Assignments/Assignment-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

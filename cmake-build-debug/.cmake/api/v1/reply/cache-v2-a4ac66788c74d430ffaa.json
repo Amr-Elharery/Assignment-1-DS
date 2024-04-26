@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/Datastructure/Assignments/Assignment-1/cmake-build-debug"
+			"value" : "E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/DataStructures/Assignments/Assignment-1/cmake-build-debug"
 		},
 		{
 			"name" : "Assignment_1_IS_TOP_LEVEL",
@@ -35,7 +35,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/Datastructure/Assignments/Assignment-1"
+			"value" : "E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/DataStructures/Assignments/Assignment-1"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/Datastructure/Assignments/Assignment-1/cmake-build-debug"
+			"value" : "e:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/DataStructures/Assignments/Assignment-1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/Datastructure/Assignments/Assignment-1"
+			"value" : "E:/Amr/EDUCATION/FCAI/Second-Year/Second-semester/DataStructures/Assignments/Assignment-1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
