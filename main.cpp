@@ -27,6 +27,10 @@ public:
     {
         return name < second.name;
     }
+    bool operator<=(const Student &second) const
+    {
+        return name <= second.name;
+    }
     bool operator>(const Student &second) const
     {
         return name > second.name;
@@ -194,17 +198,151 @@ void shellSortByGPA(T *arr, int size)
     }
 }
 
-template <typename T>
-void MergeSort(T *arr, int size)
-{
-
-}
 
 template <typename T>
-void MergeSortByGPA(T *arr, int size)
-{
+void Merge(T array[], int const left, int const mid,
+           int const right){
+    int const subArrayOne = mid - left + 1;
+    int const subArrayTwo = right - mid;
 
+    // Create temp arrays
+    auto *leftArray = new T[subArrayOne],
+            *rightArray = new T[subArrayTwo];
+
+    // Copy data to temp arrays leftArray[] and rightArray[]
+    for (auto i = 0; i < subArrayOne; i++)
+        leftArray[i] = array[left + i];
+    for (auto j = 0; j < subArrayTwo; j++)
+        rightArray[j] = array[mid + 1 + j];
+
+    auto indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
+    int indexOfMergedArray = left;
+
+    // Merge the temp arrays back into array[left..right]
+    while (indexOfSubArrayOne < subArrayOne
+           && indexOfSubArrayTwo < subArrayTwo) {
+        if (leftArray[indexOfSubArrayOne]
+            <= rightArray[indexOfSubArrayTwo]) {
+            array[indexOfMergedArray]
+                    = leftArray[indexOfSubArrayOne];
+            indexOfSubArrayOne++;
+        }
+        else {
+            array[indexOfMergedArray]
+                    = rightArray[indexOfSubArrayTwo];
+            indexOfSubArrayTwo++;
+        }
+        indexOfMergedArray++;
+    }
+
+    // Copy the remaining elements of
+    // left[], if there are any
+    while (indexOfSubArrayOne < subArrayOne) {
+        array[indexOfMergedArray]
+                = leftArray[indexOfSubArrayOne];
+        indexOfSubArrayOne++;
+        indexOfMergedArray++;
+    }
+
+    // Copy the remaining elements of
+    // right[], if there are any
+    while (indexOfSubArrayTwo < subArrayTwo) {
+        array[indexOfMergedArray]
+                = rightArray[indexOfSubArrayTwo];
+        indexOfSubArrayTwo++;
+        indexOfMergedArray++;
+    }
+    delete[] leftArray;
+    delete[] rightArray;
 }
+
+// begin is for left index and end is right index
+// of the sub-array of arr to be sorted
+template <typename T>
+void MergeSort(T array[], int const begin, int const end)
+{
+    if (begin >= end)
+        return;
+
+    int mid = begin + (end - begin) / 2;
+    MergeSort(array, begin, mid);
+    MergeSort(array, mid + 1, end);
+    Merge(array, begin, mid, end);
+}
+
+
+//By GPA
+template <typename T>
+void MergeByGPA(T array[], int const left, int const mid,
+           int const right){
+    int const subArrayOne = mid - left + 1;
+    int const subArrayTwo = right - mid;
+
+    // Create temp arrays
+    auto *leftArray = new T[subArrayOne],
+            *rightArray = new T[subArrayTwo];
+
+    // Copy data to temp arrays leftArray[] and rightArray[]
+    for (auto i = 0; i < subArrayOne; i++)
+        leftArray[i] = array[left + i];
+    for (auto j = 0; j < subArrayTwo; j++)
+        rightArray[j] = array[mid + 1 + j];
+
+    auto indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
+    int indexOfMergedArray = left;
+
+    // Merge the temp arrays back into array[left..right]
+    while (indexOfSubArrayOne < subArrayOne
+           && indexOfSubArrayTwo < subArrayTwo) {
+        if (leftArray[indexOfSubArrayOne].getGpa()
+            <= rightArray[indexOfSubArrayTwo].getGpa()) {
+            array[indexOfMergedArray]
+                    = leftArray[indexOfSubArrayOne];
+            indexOfSubArrayOne++;
+        }
+        else {
+            array[indexOfMergedArray]
+                    = rightArray[indexOfSubArrayTwo];
+            indexOfSubArrayTwo++;
+        }
+        indexOfMergedArray++;
+    }
+
+    // Copy the remaining elements of
+    // left[], if there are any
+    while (indexOfSubArrayOne < subArrayOne) {
+        array[indexOfMergedArray]
+                = leftArray[indexOfSubArrayOne];
+        indexOfSubArrayOne++;
+        indexOfMergedArray++;
+    }
+
+    // Copy the remaining elements of
+    // right[], if there are any
+    while (indexOfSubArrayTwo < subArrayTwo) {
+        array[indexOfMergedArray]
+                = rightArray[indexOfSubArrayTwo];
+        indexOfSubArrayTwo++;
+        indexOfMergedArray++;
+    }
+    delete[] leftArray;
+    delete[] rightArray;
+}
+
+// begin is for left index and end is right index
+// of the sub-array of arr to be sorted
+template <typename T>
+void MergeSortByGPA(T array[], int const begin, int const end)
+{
+    if (begin >= end)
+        return;
+
+    int mid = begin + (end - begin) / 2;
+    MergeSortByGPA(array, begin, mid);
+    MergeSortByGPA(array, mid + 1, end);
+    MergeByGPA(array, begin, mid, end);
+}
+
 template <typename T>
 void QuickSort(T *arr, int size)
 {
@@ -408,6 +546,45 @@ int main()
         // Calculate the duration
         chrono::duration<double> duration = end - start;
         sortByGPA << "Algorithm: Shell Sort" << endl;
+        sortByGPA << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
+    }
+
+    for (int i = 0; i < StudentsNumber; ++i)
+    {
+        sortByGPA << arr[i] << endl;
+    }
+    sortByGPA << endl;
+    //    Start dummy scope
+    {
+        //    Merge sort
+        // Start the clock
+        auto start = std::chrono::high_resolution_clock::now();
+        MergeSort(arr,0 , StudentsNumber-1);
+        // Stop the clock
+        auto end = std::chrono::high_resolution_clock::now();
+        // Calculate the duration
+        chrono::duration<double> duration = end - start;
+        sortByName << "Algorithm: Merge Sort" << endl;
+        sortByName << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
+    }
+
+    for (int i = 0; i < StudentsNumber; ++i)
+    {
+        sortByName << arr[i] << endl;
+    }
+    sortByName << endl;
+
+    //    Start dummy scope
+    {
+        //    Merge sort
+        // Start the clock
+        auto start = std::chrono::high_resolution_clock::now();
+        MergeSortByGPA(arr,0 , StudentsNumber-1);
+        // Stop the clock
+        auto end = std::chrono::high_resolution_clock::now();
+        // Calculate the duration
+        chrono::duration<double> duration = end - start;
+        sortByGPA << "Algorithm: Merge Sort" << endl;
         sortByGPA << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
     }
 
