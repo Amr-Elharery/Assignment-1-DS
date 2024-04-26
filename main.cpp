@@ -343,18 +343,93 @@ void MergeSortByGPA(T array[], int const begin, int const end)
     MergeByGPA(array, begin, mid, end);
 }
 
-template <typename T>
-void QuickSort(T *arr, int size)
-{
 
+
+template <typename T>
+int partition(T arr[],int low,int high)
+{
+    //choose the pivot
+
+    T pivot=arr[high];
+    //Index of smaller element and Indicate
+    //the right position of pivot found so far
+    int i=(low-1);
+
+    for(int j=low;j<=high;j++)
+    {
+        //If current element is smaller than the pivot
+        if(arr[j]<pivot)
+        {
+            //Increment index of smaller element
+            i++;
+            swap(arr[i],arr[j]);
+        }
+    }
+    swap(arr[i+1],arr[high]);
+    return (i+1);
+}
+
+// The Quicksort function Implement
+template <typename T>
+void QuickSort(T arr[],int low,int high)
+{
+    // when low is less than high
+    if(low<high)
+    {
+        // pi is the partition return index of pivot
+
+        int pi=partition(arr,low,high);
+
+        //Recursion Call
+        //smaller element than pivot goes left and
+        //higher element goes right
+        QuickSort(arr,low,pi-1);
+        QuickSort(arr,pi+1,high);
+    }
 }
 
 template <typename T>
-void QuickSortByGPA(T *arr, int size)
+int partitionByGPA(T arr[],int low,int high)
 {
+    //choose the pivot
 
+    T pivot=arr[high];
+    //Index of smaller element and Indicate
+    //the right position of pivot found so far
+    int i=(low-1);
+
+    for(int j=low;j<=high;j++)
+    {
+        //If current element is smaller than the pivot
+        if(arr[j].getGpa()<pivot.getGpa())
+        {
+            //Increment index of smaller element
+            i++;
+            swap(arr[i],arr[j]);
+        }
+    }
+    swap(arr[i+1],arr[high]);
+    return (i+1);
 }
 
+// The Quicksort function Implement
+template <typename T>
+void QuickSortByGPA(T arr[],int low,int high)
+{
+    // when low is less than high
+    if(low<high)
+    {
+        // pi is the partition return index of pivot
+
+        int pi=partitionByGPA(arr,low,high);
+
+        //Recursion Call
+        //smaller element than pivot goes left and
+        //higher element goes right
+        QuickSortByGPA(arr,low,pi-1);
+        QuickSortByGPA(arr,pi+1,high);
+    }
+}
 int main()
 {
 //     fs::path currentPath = fs::current_path();
@@ -595,6 +670,45 @@ int main()
     sortByGPA << endl;
     }
 
+    //    Start dummy scope
+    {
+        //    Quick sort
+        // Start the clock
+        auto start = std::chrono::high_resolution_clock::now();
+        QuickSort(arr,0 , StudentsNumber-1);
+        // Stop the clock
+        auto end = std::chrono::high_resolution_clock::now();
+        // Calculate the duration
+        chrono::duration<double> duration = end - start;
+        sortByName << "Algorithm: Quick Sort" << endl;
+        sortByName << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
+
+        for (int i = 0; i < StudentsNumber; ++i)
+        {
+            sortByName << arr[i] << endl;
+        }
+        sortByName << endl;
+    }
+
+    //    Start dummy scope
+    {
+        //    Quick sort
+        // Start the clock
+        auto start = std::chrono::high_resolution_clock::now();
+        QuickSortByGPA(arr,0 , StudentsNumber-1);
+        // Stop the clock
+        auto end = std::chrono::high_resolution_clock::now();
+        // Calculate the duration
+        chrono::duration<double> duration = end - start;
+        sortByGPA << "Algorithm: Quick Sort" << endl;
+        sortByGPA << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
+
+        for (int i = 0; i < StudentsNumber; ++i)
+        {
+            sortByGPA << arr[i] << endl;
+        }
+        sortByGPA << endl;
+    }
 
 
 
