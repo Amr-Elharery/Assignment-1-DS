@@ -1,33 +1,33 @@
 Algorithm: Bubble Sort
-Running Time: 0.0063 milliseconds
+Running Time: 0.0086 milliseconds
 Ali 3541 3.5
 Mariam 69712 3.7
 Mohamed 97848 2.2
 Sara 78697 3.1
 
 Algorithm: Insertion Sort
-Running Time: 0.0021 milliseconds
+Running Time: 0.0025 milliseconds
 Ali 3541 3.5
 Mariam 69712 3.7
 Mohamed 97848 2.2
 Sara 78697 3.1
 
 Algorithm: Selection Sort
-Running Time: 0.0016 milliseconds
+Running Time: 0.0012 milliseconds
 Ali 3541 3.5
 Mariam 69712 3.7
 Mohamed 97848 2.2
 Sara 78697 3.1
 
 Algorithm: Shell Sort
-Running Time: 0.0026 milliseconds
+Running Time: 0.0035 milliseconds
 Ali 3541 3.5
 Mariam 69712 3.7
 Mohamed 97848 2.2
 Sara 78697 3.1
 
 Algorithm: Merge Sort
-Running Time: 0.0087 milliseconds
+Running Time: 0.0105 milliseconds
 Ali 3541 3.5
 Mariam 69712 3.7
 Mohamed 97848 2.2

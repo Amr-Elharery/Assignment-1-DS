@@ -386,6 +386,7 @@ int main()
     //    For testing
     //    cout << StudentsNumber << endl;
 
+//    Get data from file
     Student arr[StudentsNumber];
     for (int i = 0; i < StudentsNumber; ++i)
     {
@@ -399,6 +400,7 @@ int main()
         inputFile >> gpa;
         arr[i].setGpa(gpa);
     }
+
     //    Start dummy scope
     {
         // Start the clock
@@ -449,12 +451,12 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByName << "Algorithm: Insertion Sort" << endl;
         sortByName << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByName << arr[i] << endl;
     }
     sortByName << endl;
+    }
 
     //    Start dummy scope
     {
@@ -467,13 +469,13 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByGPA << "Algorithm: Insertion Sort" << endl;
         sortByGPA << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
-
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByGPA << arr[i] << endl;
     }
     sortByGPA << endl;
+    }
+
 
     //    Start dummy scope
 
@@ -488,13 +490,13 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByName << "Algorithm: Selection Sort" << endl;
         sortByName << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
 
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByName << arr[i] << endl;
     }
     sortByName << endl;
+    }
 
     //    Start dummy scope
     {
@@ -508,13 +510,13 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByGPA << "Algorithm: Selection Sort" << endl;
         sortByGPA << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
-
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByGPA << arr[i] << endl;
     }
     sortByGPA << endl;
+    }
+
 
     //    Start dummy scope
     {
@@ -528,13 +530,13 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByName << "Algorithm: Shell Sort" << endl;
         sortByName << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
 
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByName << arr[i] << endl;
     }
     sortByName << endl;
+    }
     //    Start dummy scope
     {
         //    shellSort
@@ -547,13 +549,13 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByGPA << "Algorithm: Shell Sort" << endl;
         sortByGPA << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
-
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByGPA << arr[i] << endl;
     }
     sortByGPA << endl;
+    }
+
     //    Start dummy scope
     {
         //    Merge sort
@@ -566,13 +568,13 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByName << "Algorithm: Merge Sort" << endl;
         sortByName << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
 
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByName << arr[i] << endl;
     }
     sortByName << endl;
+    }
 
     //    Start dummy scope
     {
@@ -586,13 +588,13 @@ int main()
         chrono::duration<double> duration = end - start;
         sortByGPA << "Algorithm: Merge Sort" << endl;
         sortByGPA << "Running Time: " << duration.count() * 1000 << " milliseconds" << endl;
-    }
-
     for (int i = 0; i < StudentsNumber; ++i)
     {
         sortByGPA << arr[i] << endl;
     }
     sortByGPA << endl;
+    }
+
 
 
 
